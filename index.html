@@ -14,10 +14,18 @@
         <img src="assets/Castle.jpg" id="castle">
 
       </a-assets>
-      <a-image src="#forest" position="-1.5 1.8 -3"></a-image>
-      <a-image src="#market" position="0 1.8 -3"></a-image>
-      <a-image src="#castle" position="1.5 1.8 -3"></a-image>
-      <a-sky src="#castle"></a-sky>
+      <a-image src="#forest" position="-1.5 1.8 -3" onclick="show('forest')"></a-image>
+      <a-image src="#market" position="0 1.8 -3" onclick="show('market')"></a-image>
+      <a-image src="#castle" position="1.5 1.8 -3" onclick="show('castle')"></a-image>
+      <a-sky id="sky" src="#castle"></a-sky>
+      <a-camera>
+        <a-cursor></a-cursor>
+      </a-camera>
     </a-scene>
+    <script>
+      function show(id) {
+        document.getElementById('sky').setAttribute('src', '#' + id)
+      }
+    </script>
   </body>
 </html>
